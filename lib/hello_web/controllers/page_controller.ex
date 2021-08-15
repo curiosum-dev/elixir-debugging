@@ -1,8 +1,15 @@
 defmodule HelloWeb.PageController do
+  require HelloWeb
   use HelloWeb, :controller
+
+  require IEx
 
   @spec index(Plug.Conn.t(), nil | maybe_improper_list | map) :: Plug.Conn.t()
   def index(conn, params) do
+    IEx.pry()
+
+    # fug = 1
+
     result =
       (params["val"] || "0")
       |> String.to_integer()
